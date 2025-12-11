@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python reorganize.py:*)",
+      "Bash(python -m pip install:*)",
+      "Bash(dir \"%USERPROFILE%\\.config\\tidal-dl-ng\")",
+      "Bash(dir \"%APPDATA%\\tidal-dl-ng\")",
+      "Bash(tidal-dl-ng cfg:*)",
+      "Bash(findstr:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

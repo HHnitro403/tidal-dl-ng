@@ -1,0 +1,81 @@
+# TIDAL Playlist Monitor Configuration
+# Copy this file to config.yaml and customize as needed
+
+# TIDAL Authentication
+tidal:
+  # Path to OAuth token file (auto-created on first login)
+  # Default: {CONFIG_DIR}/tidal_token.json
+  token_path: null
+
+# Database Configuration
+database:
+  # Path to SQLite database file
+  # Default: {CONFIG_DIR}/monitor.db
+  path: null
+
+# Scheduler Settings
+scheduler:
+  # How often to check for playlist changes (in minutes)
+  # Minimum: 5 minutes
+  check_interval_minutes: 30
+
+  # Use cron-style schedule instead of interval (optional)
+  use_cron_schedule: false
+  cron_schedule: "0 */2 * * *"  # Every 2 hours (if use_cron_schedule: true)
+
+# Download Configuration
+download:
+  # Audio quality: LOW, HIGH, LOSSLESS, HI_RES
+  audio_quality: HI_RES
+
+  # Base download directory
+  # Default: ~/Music/TIDAL or ~/Downloads/TIDAL
+  download_path: null
+
+  # Maximum retry attempts for failed downloads
+  max_retries: 3
+
+  # Delay between retries (seconds)
+  retry_delay: 60
+
+  # Delay between sequential downloads (seconds)
+  delay_between_downloads: 5
+
+  # Extract FLAC from MP4 containers
+  # IMPORTANT: Set to false on Windows to avoid terminal flash
+  extract_flac: false
+
+  # Skip already downloaded tracks
+  skip_existing: true
+
+# Notification Settings
+notifications:
+  # Enable/disable all notifications
+  enabled: true
+
+  # Show desktop notifications
+  desktop: true
+
+  # Notify when new tracks are found
+  on_new_tracks: true
+
+  # Notify when downloads complete
+  on_download_complete: true
+
+  # Notify on errors (can be noisy)
+  on_error: false
+
+# Logging Configuration
+logging:
+  # Log file path
+  # Default: {CONFIG_DIR}/service.log
+  path: null
+
+  # Logging level: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  level: INFO
+
+  # Maximum log file size before rotation (MB)
+  max_size_mb: 10
+
+  # Number of backup log files to keep
+  backup_count: 5
